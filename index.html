@@ -1,0 +1,47 @@
+<!-- index.html -->
+<html>
+<head>
+
+	<p>even</p>
+	<script>
+		let data = {}
+		let count = 1;
+		let key = null;
+		let arr = [
+		1,
+		2,
+		"kishor",
+		"test",
+		{a : function(a,b){
+			return (a+b);
+		}}
+		];
+		alert(typeof(arr[4]));
+		for(a in arr){
+
+			if(typeof(arr[a] === Number )){
+				key = +arr[a] + count ;
+				data[key] = arr[a] ;
+				count ++ ;
+			}else if(typeof(arr[a] === String )){
+				key = Object.keys(arr[a]) ;
+				data[key] = arr[a].value  ;
+			}else if(typeof(arr[a] === Object )){
+				key = Object.keys(arr[a]);
+				data[key] = arr[a];
+			}else{
+				alert("sorry");
+			}
+			// alert(arr[a]);
+		}
+
+		console.log(data);
+		alert(data);
+
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
