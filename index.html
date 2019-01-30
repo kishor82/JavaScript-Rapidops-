@@ -10,33 +10,43 @@
 		let arr = [
 		1,
 		2,
+		10,
 		"kishor",
 		"test",
-		{a : function(a,b){
-			return (a+b);
-		}}
+		{
+			a:{
+				b:function(){},
+				c:"Hello",
+				d:10
+			}
+		}
 		];
-		alert(typeof(arr[4]));
+		let res=[];
+		alert(typeof(arr[3]));
 		for(a in arr){
 
-			if(typeof(arr[a] === Number )){
-				key = +arr[a] + count ;
-				data[key] = arr[a] ;
+			if(typeof(arr[a]) == 'number' ){
+				data["key"] = arr[a] ;
+				data["count"] =  arr[a] + count;
 				count ++ ;
-			}else if(typeof(arr[a] === String )){
-				key = Object.keys(arr[a]) ;
-				data[key] = arr[a].value  ;
-			}else if(typeof(arr[a] === Object )){
-				key = Object.keys(arr[a]);
-				data[key] = arr[a];
+				res.push(data);
+				data = {};
+			}else if(typeof(arr[a]) == 'string' ){
+				data["key"] = arr[a] ;
+				data["NAME"] =  arr[a] 
+				res.push(data);
+				data = {};
+			}else if(typeof(arr[a] ) == 'object' ){
+				key =arr[a] ;
+				data[key] = Object.keys(arr[a]);
 			}else{
 				alert("sorry");
 			}
 			// alert(arr[a]);
 		}
 
-		console.log(data);
-		alert(data);
+		console.log(res);
+		
 
 
 	</script>
