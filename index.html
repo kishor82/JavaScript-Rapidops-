@@ -47,12 +47,12 @@
 					// console.log(typeof(obj[i]));
 					let  datacopy = obj[i];
 
-					data[`key-${i}`] = i;
+					data[`key`] = i;
 					for ( let k in datacopy){
 						// console.log("["+c+"]"+"["+In+"] -  iteration ");
 						// console.log (k)
-						inner[`key-${k}`] = k ;
-						inner[`value-${k}`] = (obj[i][k]) ;
+						inner[`key`] = k ;
+						inner[`value`] = (obj[i][k]) ;
 						data[`Value-${k}`] = inner ;
 						// console.log(data);
 						inner = {};
