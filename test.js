@@ -63,4 +63,6 @@ let data = {}
 			}
 			// alert(arr[a]);
 		}
+		console.log(arr);
+		console.log("----------------------------------------------------------------");
 		console.log(res);
