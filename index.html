@@ -22,21 +22,21 @@
 		}];
 		let res=[];
 
-		for(a in arr){
+		for(a of arr){
 
-			if(typeof(arr[a]) == 'number' ){
-				data["key"] = arr[a] ;
-				data["count"] =  arr[a] + count;
+			if(typeof(a) == 'number' ){
+				data["key"] = a ;
+				data["count"] =  a + count;
 				count ++ ;
 				res.push(data);
 				data = {};
-			}else if(typeof(arr[a]) == 'string' ){
-				data["key"] = arr[a] ;
-				data["name"] =  arr[a] 
+			}else if(typeof(a) == 'string' ){
+				data["key"] = a ;
+				data["name"] =  a 
 				res.push(data);
 				data = {};
-			}else if(typeof(arr[a] ) == 'object' ){
-				let obj = arr[a];
+			}else if(typeof(a ) == 'object' ){
+				let obj = a;
 				let inner = {} ;
 				// let c = 1 ;
 				// let In = 1 ;
@@ -51,14 +51,16 @@
 					for ( let k in datacopy){
 						// console.log("["+c+"]"+"["+In+"] -  iteration ");
 						// console.log (k)
-						inner[`key`] = k ;
-						inner[`value`] = (obj[i][k]) ;
-						data[`Value-${k}`] = inner ;
+						data[`${k}`] = k ;
+						data[`${k}`] = (obj[i][k]) ;
+			
 						// console.log(data);
-						inner = {};
+				
 						// In  ++;
 					}
+					// data[`Value`] = inner ;
 					res.push(data);
+					inner = {};
 					data = {};
 					// c ++;
 					// In = 1 ;
@@ -67,7 +69,7 @@
 			}else{
 
 			}
-			// alert(arr[a]);
+			// alert(a);
 		}
 		console.log(res);
 	
